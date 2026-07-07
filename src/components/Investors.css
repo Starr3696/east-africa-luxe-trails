@@ -1,0 +1,221 @@
+.investors {
+  position: relative;
+  overflow: hidden;
+}
+
+.investors__bg {
+  position: absolute;
+  inset: 0;
+  background: var(--green);
+  z-index: 0;
+}
+
+.investors__bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1800&q=60') center/cover;
+  opacity: 0.12;
+}
+
+.investors__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.investors__left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.investors__left--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.investors__figures {
+  display: flex;
+  gap: 32px;
+  margin: 36px 0 32px;
+  padding: 28px;
+  background: rgba(255,255,255,0.07);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(201,162,39,0.3);
+}
+
+.investors__figure {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.investors__figure-num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.investors__figure-label {
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.4;
+}
+
+.investors__cta {
+  margin-top: 4px;
+}
+
+.investors__right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+.investors__right--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.investors__card {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 24px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.investors__card:hover {
+  background: rgba(201,162,39,0.1);
+  border-color: rgba(201,162,39,0.3);
+  transform: translateX(6px);
+}
+
+.investors__card-icon {
+  font-size: 1.2rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.investors__card-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.investors__card-desc {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.75;
+}
+
+@media (max-width: 900px) {
+  .investors__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .investors__figures {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+/* ---- Portfolio strip ---- */
+.investors__portfolio {
+  margin: 28px 0 24px;
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(201,162,39,0.2);
+  border-radius: var(--radius-sm);
+}
+
+.investors__portfolio-label {
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.investors__portfolio-tiers {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.investors__portfolio-tier {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.investors__portfolio-tier:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.investors__portfolio-icon {
+  font-size: 1rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.investors__portfolio-name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 1px;
+}
+
+.investors__portfolio-tagline {
+  display: block;
+  font-size: 0.72rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 2px;
+  line-height: 1.4;
+}
+
+.investors__portfolio-price {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+}
+
+.investors__portfolio-link {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: opacity 0.2s ease;
+}
+
+.investors__portfolio-link:hover { opacity: 0.75; }
