@@ -4,11 +4,11 @@ import './Agents.css';
 const agents = [
   {
     name: 'Starford Magero',
-    role: 'Head Safari Guide & Co-Founder',
+    role: 'Head Travel Consultant & Co-Founder',
     bio: 'A co-founder of East Africa Luxe Trails, Starford combines marketing expertise with hands-on safari operations experience and formal training in Tours, Travel and Tourism. He specializes in client advisory — listening closely to what each traveler envisions and shaping it into a seamless, unforgettable journey across East Africa.',
     image: '/Starford-Magero.png',
     speciality: 'Kenya & Tanzania',
-    languages: 'English, Swahili, Kikuyu',
+    languages: 'English, Swahili, Luhyah',
   },
   {
     name: 'Naledi Dlamini',
