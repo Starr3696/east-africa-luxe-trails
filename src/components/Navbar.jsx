@@ -57,19 +57,18 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''} ${menuOpen ? 'navbar--open' : ''}`}>
       <div className="navbar__inner">
-        <Link to="/" className="navbar__logo">
-          <span className="navbar__logo-icon"><Link to="/" className="navbar__logo">
-          <img src="/logo.png" alt="East Africa Luxe Trails" className="navbar__logo-icon" />
-          </Link></span>
 
+        {/* ---- Logo (single Link, no nesting) ---- */}
+        <Link to="/" className="navbar__logo">
+          <img src="/logo.png" alt="East Africa Luxe Trails" className="navbar__logo-icon" />
           <span className="navbar__logo-text">
             <span className="navbar__logo-main">East Africa</span>
             <span className="navbar__logo-sub">Luxe Trails</span>
           </span>
         </Link>
 
+        {/* ---- Desktop Nav Links ---- */}
         <ul className="navbar__links">
-          {/* Home & About */}
           {navLinks.slice(0, 2).map((link) => (
             <li key={link.label}>
               {link.anchor ? (
@@ -111,7 +110,6 @@ export default function Navbar() {
             )}
           </li>
 
-          {/* Remaining links */}
           {navLinks.slice(2).map((link) => (
             <li key={link.label}>
               {link.anchor ? (
@@ -127,6 +125,7 @@ export default function Navbar() {
           Plan Your Journey
         </Link>
 
+        {/* ---- Hamburger ---- */}
         <button
           className="navbar__hamburger"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -136,7 +135,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* ---- Mobile Menu ---- */}
       <div className={`navbar__mobile ${menuOpen ? 'navbar__mobile--open' : ''}`}>
         <ul>
           {navLinks.slice(0, 2).map((link) => (
@@ -148,6 +147,7 @@ export default function Navbar() {
               )}
             </li>
           ))}
+
           <li className="navbar__mobile-section">
             <span className="navbar__mobile-section-label">Services</span>
             {serviceLinks.map((s) => (
@@ -161,6 +161,7 @@ export default function Navbar() {
               </Link>
             ))}
           </li>
+
           {navLinks.slice(2).map((link) => (
             <li key={link.label}>
               {link.anchor ? (
@@ -170,6 +171,7 @@ export default function Navbar() {
               )}
             </li>
           ))}
+
           <li>
             <Link to="/#contact" className="btn-primary" onClick={(e) => { handleAnchor(e, '#contact'); setMenuOpen(false); }}>
               Plan Your Journey
