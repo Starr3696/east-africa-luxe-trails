@@ -4,24 +4,25 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 24px 0;
+  padding: 20px 0;
   transition: var(--transition);
 }
 
 .navbar--scrolled {
   background: rgba(10, 42, 31, 0.97);
   backdrop-filter: blur(12px);
-  padding: 16px 0;
+  padding: 14px 0;
   box-shadow: 0 2px 30px rgba(0,0,0,0.3);
 }
 
+/* ---- Inner layout ---- */
 .navbar__inner {
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 32px;
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 32px;
 }
 
 /* ---- Logo ---- */
@@ -31,11 +32,12 @@
   gap: 10px;
   text-decoration: none;
   flex-shrink: 0;
+  min-width: 0;
 }
 
-.navbar__logo-icon {
-  height: 52px;
-  width: 52px;
+.navbar__logo-img {
+  height: 48px;
+  width: 48px;
   object-fit: contain;
   border-radius: 6px;
   flex-shrink: 0;
@@ -45,24 +47,27 @@
   display: flex;
   flex-direction: column;
   line-height: 1;
+  min-width: 0;
 }
 
 .navbar__logo-main {
   font-family: var(--font-display);
-  font-size: 1.55rem;
+  font-size: 1.35rem;
   font-weight: 500;
   color: var(--white);
   letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 
 .navbar__logo-sub {
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 400;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-top: 2px;
+  margin-top: 3px;
+  white-space: nowrap;
 }
 
 /* ---- Desktop Nav Links ---- */
@@ -71,6 +76,7 @@
   align-items: center;
   gap: 24px;
   margin-left: auto;
+  list-style: none;
 }
 
 .navbar__links li a {
@@ -80,6 +86,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.85);
+  text-decoration: none;
   transition: var(--transition-fast);
   position: relative;
   padding-bottom: 4px;
@@ -96,22 +103,18 @@
   transition: width 0.3s ease;
 }
 
-.navbar__links li a:hover {
-  color: var(--gold);
-}
+.navbar__links li a:hover { color: var(--gold); }
+.navbar__links li a:hover::after { width: 100%; }
 
-.navbar__links li a:hover::after {
-  width: 100%;
-}
-
-/* ---- Desktop CTA Button ---- */
+/* ---- Desktop CTA ---- */
 .navbar__cta {
   flex-shrink: 0;
   font-size: 0.7rem !important;
-  padding: 11px 22px !important;
+  padding: 11px 20px !important;
+  white-space: nowrap;
 }
 
-/* ---- Hamburger Button ---- */
+/* ---- Hamburger ---- */
 .navbar__hamburger {
   display: none;
   flex-direction: column;
@@ -119,20 +122,19 @@
   align-items: center;
   gap: 5px;
   cursor: pointer;
-  background: rgba(201, 162, 39, 0.15);
-  border: 1.5px solid rgba(201, 162, 39, 0.5);
-  border-radius: 6px;
-  padding: 10px 12px;
-  margin-left: auto;
+  background: rgba(201,162,39,0.18);
+  border: 2px solid rgba(201,162,39,0.6);
+  border-radius: 8px;
+  padding: 9px 11px;
   flex-shrink: 0;
-  min-width: 44px;
-  min-height: 44px;
+  width: 46px;
+  height: 46px;
   transition: var(--transition-fast);
   z-index: 1100;
 }
 
 .navbar__hamburger:hover {
-  background: rgba(201, 162, 39, 0.28);
+  background: rgba(201,162,39,0.32);
   border-color: var(--gold);
 }
 
@@ -141,9 +143,9 @@
   width: 22px;
   height: 2px;
   background: var(--gold);
+  border-radius: 2px;
   transition: var(--transition-fast);
   transform-origin: center;
-  border-radius: 2px;
 }
 
 .navbar--open .navbar__hamburger span:nth-child(1) {
@@ -167,15 +169,16 @@
 }
 
 .navbar__mobile--open {
-  max-height: 700px;
+  max-height: 750px;
   padding: 16px 0 28px;
 }
 
 .navbar__mobile ul {
+  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 0 20px;
+  gap: 2px;
+  padding: 0 16px;
 }
 
 .navbar__mobile ul li a {
@@ -186,6 +189,7 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.85);
+  text-decoration: none;
   transition: var(--transition-fast);
   border-radius: var(--radius-sm);
 }
@@ -195,24 +199,26 @@
   background: rgba(201,162,39,0.08);
 }
 
-.navbar__mobile ul li:last-child {
-  margin-top: 12px;
+/* Mobile CTA button */
+.navbar__mobile-cta {
+  margin-top: 14px;
   padding: 0 16px;
 }
 
-.navbar__mobile ul li:last-child a {
-  display: flex;
-  justify-content: center;
-  text-transform: uppercase;
-  font-size: 0.78rem;
-  padding: 14px 24px;
-  border-radius: var(--radius-sm);
+.navbar__mobile-cta a {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  text-transform: uppercase !important;
+  font-size: 0.78rem !important;
+  padding: 15px 24px !important;
+  border-radius: var(--radius-sm) !important;
+  letter-spacing: 0.1em !important;
+  text-decoration: none !important;
 }
 
 /* ---- Services Dropdown ---- */
-.navbar__dropdown-wrap {
-  position: relative;
-}
+.navbar__dropdown-wrap { position: relative; }
 
 .navbar__dropdown-btn {
   display: flex;
@@ -235,31 +241,19 @@
 .navbar__dropdown-btn::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
   background: var(--gold);
   transition: width 0.3s ease;
 }
 
 .navbar__dropdown-btn:hover,
-.navbar__dropdown-btn--open {
-  color: var(--gold);
-}
-
+.navbar__dropdown-btn--open { color: var(--gold); }
 .navbar__dropdown-btn:hover::after,
-.navbar__dropdown-btn--open::after {
-  width: 100%;
-}
+.navbar__dropdown-btn--open::after { width: 100%; }
 
-.navbar__dropdown-btn svg {
-  transition: transform 0.3s ease;
-}
-
-.navbar__dropdown-btn--open svg {
-  transform: rotate(180deg);
-}
+.navbar__dropdown-btn svg { transition: transform 0.3s ease; }
+.navbar__dropdown-btn--open svg { transform: rotate(180deg); }
 
 .navbar__dropdown {
   position: absolute;
@@ -279,10 +273,8 @@
 .navbar__dropdown::before {
   content: '';
   position: absolute;
-  top: -6px;
-  left: 50%;
-  width: 12px;
-  height: 12px;
+  top: -6px; left: 50%;
+  width: 12px; height: 12px;
   background: var(--green-dark);
   border-left: 1px solid rgba(201,162,39,0.2);
   border-top: 1px solid rgba(201,162,39,0.2);
@@ -304,9 +296,7 @@
   transition: var(--transition-fast);
 }
 
-.navbar__dropdown-item:hover {
-  background: rgba(201,162,39,0.1);
-}
+.navbar__dropdown-item:hover { background: rgba(201,162,39,0.1); }
 
 .navbar__dropdown-icon {
   font-size: 1rem;
@@ -334,7 +324,7 @@
 
 /* ---- Mobile Services Section ---- */
 .navbar__mobile-section {
-  padding: 8px 0 4px;
+  padding: 6px 0;
   border-top: 1px solid rgba(255,255,255,0.08);
   border-bottom: 1px solid rgba(255,255,255,0.08);
   margin: 4px 0;
@@ -347,7 +337,7 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold);
-  padding: 6px 16px 8px;
+  padding: 8px 16px 6px;
 }
 
 .navbar__mobile-service-link {
@@ -358,52 +348,41 @@
   font-size: 0.82rem !important;
   color: rgba(255,255,255,0.8) !important;
   letter-spacing: 0.06em !important;
+  text-decoration: none !important;
 }
 
-.navbar__mobile-service-link:hover {
-  color: var(--gold) !important;
-}
+.navbar__mobile-service-link:hover { color: var(--gold) !important; }
 
 /* ================================================================
-   RESPONSIVE
+   RESPONSIVE BREAKPOINTS
    ================================================================ */
 
+/* Hide desktop elements, show mobile ones */
 @media (max-width: 1080px) {
-  .navbar__links,
-  .navbar__cta {
-    display: none;
-  }
-
-  .navbar__hamburger {
-    display: flex;
-  }
-
-  .navbar__mobile {
-    display: block;
-  }
-
-  .navbar__inner {
-    padding: 0 20px;
-  }
+  .navbar__links { display: none; }
+  .navbar__cta   { display: none !important; }
+  .navbar__hamburger { display: flex; }
+  .navbar__mobile    { display: block; }
+  .navbar__inner { padding: 0 20px; gap: 16px; }
 }
 
-@media (max-width: 400px) {
-  .navbar__logo-main {
-    font-size: 1.1rem;
-  }
+/* Phones */
+@media (max-width: 600px) {
+  .navbar { padding: 14px 0; }
+  .navbar--scrolled { padding: 10px 0; }
+  .navbar__inner { padding: 0 14px; gap: 12px; }
+  .navbar__logo-img { height: 40px; width: 40px; }
+  .navbar__logo-main { font-size: 1.05rem; }
+  .navbar__logo-sub  { font-size: 0.6rem; letter-spacing: 0.12em; }
+  .navbar__hamburger { width: 42px; height: 42px; padding: 8px 10px; }
+  .navbar__hamburger span { width: 20px; }
+}
 
-  .navbar__logo-sub {
-    font-size: 0.6rem;
-    letter-spacing: 0.14em;
-  }
-
-  .navbar__hamburger {
-    padding: 8px 10px;
-    min-width: 40px;
-    min-height: 40px;
-  }
-
-  .navbar__hamburger span {
-    width: 18px;
-  }
+/* Very small phones */
+@media (max-width: 360px) {
+  .navbar__logo-img { height: 34px; width: 34px; }
+  .navbar__logo-main { font-size: 0.9rem; }
+  .navbar__logo-sub  { display: none; }
+  .navbar__hamburger { width: 38px; height: 38px; }
+  .navbar__hamburger span { width: 18px; }
 }
