@@ -552,3 +552,24 @@
   .coll-dests__grid { grid-template-columns: 1fr; }
   .invest-form__form-wrap { padding: 26px 22px; }
 }
+
+/* ---- Enquire button scroll highlight ---- */
+.tier-card__enquire-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+/* Highlight the form when scrolled to from enquire button */
+#investment-deck {
+  scroll-margin-top: 80px;
+}
+
+.invest-form__form-wrap {
+  transition: box-shadow 0.4s ease;
+}
+
+#investment-deck:target .invest-form__form-wrap {
+  box-shadow: 0 0 0 3px var(--gold), var(--shadow-lg);
+}
