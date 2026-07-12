@@ -72,9 +72,18 @@ export default function Investors() {
             </Link>
           </div>
 
-          <Link to="/collections#investment-deck" className="btn-primary investors__cta">
-            Request Investment Deck
-          </Link>
+          <Link
+         to="/collections"
+         className="btn-primary investors__cta"
+         onClick={() => {
+         setTimeout(() => {
+         const el = document.querySelector('#investment-deck');
+         if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 500);
+  }}
+>
+  Request Investment Deck
+</Link>
         </div>
 
         {/* Right: opportunities */}
