@@ -78,8 +78,8 @@ export default function Hero() {
             Explore Packages
             <span>→</span>
           </button>
-          <button className="btn-secondary" onClick={() => handleAnchor('#contact')}>
-            Speak to a Consultant
+          <button className="btn-secondary" onClick={() => handleAnchor('#agents')}>
+           Speak to a Consultant
           </button>
         </div>
 
