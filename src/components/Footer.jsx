@@ -21,7 +21,7 @@ export default function Footer() {
 </span>
             <div>
               <span className="footer__logo-main">East Africa Luxe Trails</span>
-              <span className="footer__logo-sub">Luxury Safari & Travel</span>
+              <span className="footer__logo-sub">Explore Experience Excellence</span>
             </div>
           </div>
           <p className="footer__tagline">
