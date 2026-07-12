@@ -47,7 +47,40 @@
   display: flex;
   flex-direction: column;
   line-height: 1;
-  min-width: 0;
+  gap: 5px;
+}
+
+.navbar__logo-main {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.navbar__logo-divider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar__logo-line {
+  flex: 1;
+  height: 1px;
+  background: var(--gold);
+  min-width: 18px;
+}
+
+.navbar__logo-sub {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
 }
 
 .navbar__logo-main {

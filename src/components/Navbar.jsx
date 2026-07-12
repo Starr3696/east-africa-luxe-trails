@@ -69,8 +69,14 @@ export default function Navbar() {
         <Link to="/" className="navbar__logo">
           <img src="/logo.png" alt="East Africa Luxe Trails" className="navbar__logo-img" />
           <span className="navbar__logo-text">
-            <span className="navbar__logo-main">East Africa</span>
-            <span className="navbar__logo-sub">Luxe Trails</span>
+            <span className="navbar__logo-text">
+  <span className="navbar__logo-main">East Africa</span>
+  <span className="navbar__logo-divider">
+    <span className="navbar__logo-line" />
+    <span className="navbar__logo-sub">Luxe Trails</span>
+    <span className="navbar__logo-line" />
+  </span>
+</span>
           </span>
         </Link>
 
