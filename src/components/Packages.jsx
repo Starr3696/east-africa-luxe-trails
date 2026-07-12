@@ -121,7 +121,19 @@ function PackageCard({ pkg, delay, visible }) {
 
         <div className="pkg-card__footer">
           <span className="pkg-card__price">{pkg.price}</span>
-          <button className="pkg-card__cta btn-outline-green">Enquire Now</button>
+          <button
+  className="pkg-card__cta btn-outline-green"
+  onClick={() => {
+    const el = document.querySelector('#contact');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#contact';
+    }
+  }}
+>
+  Enquire Now
+</button>
         </div>
       </div>
     </div>
